@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="titleName">PROJET</ui:define>
+	<ui:define name="menu">
+	<li><a class="menu-top-active"
+							href="#{request.contextPath}/pages/lancementProjet.xhtml">
+								Lancer un projet </a></li>
+	</ui:define>
+	<ui:define name="PageName">Lancer un nouveau projet</ui:define>
+	<ui:define name="PageContent">
+
+		<div class="panel panel-success">
+
+			<div class="panel-heading">Demande de changement :</div>
+			<div class="panel-body">
+				<h:form>
+					<label> Problème rencontré : </label>
+					<h:inputText value="#{demandeB.demande.probleme}" class="form-control" />
+					<label> Département : </label>
+					<h:selectOneMenu id="dep" value="#{demandeB.demande.departement}" class="form-control">
+						<f:selectItem itemLabel="Informatique" itemValue="Informatique" />
+						<f:selectItem itemLabel="autre departement" itemValue="je sais pas" />
+					</h:selectOneMenu>
+					<label> Descrription : </label>
+					<h:inputTextarea value="#{demandeB.demande.description}" rows="9" class="form-control" />
+					<hr/>
+					<h:commandButton action="#{demandeB.doAjouterDemande()}" value="Enregistrer"
+					class="btn btn-success" />
+				</h:form>
+			</div>
+			
+		</div>
+
+
+
+	</ui:define>
+</ui:composition>

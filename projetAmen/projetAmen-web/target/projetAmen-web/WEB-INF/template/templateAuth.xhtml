@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>AMENBANK | <ui:insert name="titleName"></ui:insert></title>
+	<!-- BOOTSTRAP CORE STYLE  -->
+	<link href="#{request.contextPath}/resources/css/bootstrap.css"
+		rel="stylesheet" />
+	<link href="#{request.contextPath}/resources/css/font-awesome.css"
+		rel="stylesheet" />
+	<link href="#{request.contextPath}/resources/css/style.css"
+		rel="stylesheet" />
+</h:head>
+
+<body>
+	<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<strong>Site: </strong>amenbank.com.tn &nbsp;&nbsp; <strong>Support:
+				</strong>+216-71-148-000
+			</div>
+
+		</div>
+	</div>
+	</header>
+	<!-- HEADER END-->
+	<div class="navbar navbar-inverse set-radius-zero">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href=" "> <img
+					src="#{request.contextPath}/resources/img/amen.PNG" />
+				</a>
+
+			</div>
+			<div class="left-div">
+				<i class="fa fa-user-plus login-icon"></i>
+			</div>
+
+		</div>
+	</div>
+	<!-- LOGO HEADER END-->
+	<section class="menu-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="navbar-collapse collapse ">
+					<ul id="menu-top" class="nav navbar-nav navbar-right">
+						<li><a href="index.html"> </a></li>
+						<li><a href="ui.html"> </a></li>
+						<li><a href="table.html"> </a></li>
+						<li><a href="forms.html"> </a></li>
+						<li><a href="login.html"> </a></li>
+						<li><a href="blank.html"> </a></li>
+
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</section>
+	<!-- MENU SECTION END-->
+	<div class="content-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="page-head-line">
+						<ui:insert name="PageName"></ui:insert>
+					</h4>
+				</div>
+			</div>
+			<div class="row">
+
+				<ui:insert name="PageContent"></ui:insert>
+
+			</div>
+		</div>
+	</div>
+	<!-- CONTENT-WRAPPER SECTION END-->
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				&copy; 2016 Amen Bank | By : <a
+					href="https://www.facebook.com/nadhem.najjar?fref=ts"
+					target="_blank">Med Nadhem Najar</a>
+			</div>
+
+		</div>
+	</div>
+	</footer>
+	<!-- FOOTER SECTION END-->
+	<!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY SCRIPTS -->
+	<script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  -->
+	<script src="assets/js/bootstrap.js"></script>
+</body>
+</html>

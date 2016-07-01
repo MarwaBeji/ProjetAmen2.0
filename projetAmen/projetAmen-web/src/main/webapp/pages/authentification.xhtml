@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/templateAuth.xhtml">
+	<ui:define name="titleName">LOGIN</ui:define>
+	<ui:define name="PageName">SVP connectez pour entrer</ui:define>
+	<ui:define name="PageContent">
+
+		<div class="col-md-6">
+			
+			<br />
+			<h:form>
+				<label> Login : </label>
+				<p:inputText value=" " class="form-control" />
+				<label> Mot de passe : </label>
+				<p:inputText value=" " class="form-control" />
+				<hr />
+				<p:commandButton action=" " value="Log me IN"
+					ajax="false" class="btn btn-info" />
+			</h:form>
+		</div>
+
+		
+
+	</ui:define>
+</ui:composition>

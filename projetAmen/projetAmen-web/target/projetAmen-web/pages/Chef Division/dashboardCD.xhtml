@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="titleName">DASHBOARD</ui:define>
+	<ui:define name="menu">
+		<li><a href="#{request.contextPath}/pages/lancementProjet.xhtml">
+				Lancer un projet </a></li>
+	</ui:define>
+	<ui:define name="PageName">Dashboard Chef de division</ui:define>
+	<ui:define name="PageContent">
+		<ui:include src="/WEB-INF/template/menuCD.xhtml" />
+		<!--  liste des projets -->
+		<h:form>
+			<div class="panel panel-info">
+				<div class="panel-heading">La liste des projets</div>
+				<div class="panel-body">
+					<h:dataTable
+						styleClass="table table-striped table-bordered table-hover"
+						value="#{projetB.projets}" var="projet">
+
+						<h:column>
+							<f:facet name="header">Titre</f:facet>
+							<h:outputText value="#{projet.titre}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Departement</f:facet>
+							<h:outputText value="#{projet.departement}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Date Debut</f:facet>
+							<h:outputText value="#{projet.dateDebut}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Date Fin</f:facet>
+							<h:outputText value="#{projet.dateFin}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Etape Actuelle</f:facet>
+							<h:outputText value="#{projet.etape}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Collaborateurs</f:facet>
+							<h:commandButton styleClass="btn btn-primary btn-xs" action=" "
+								value="Show">
+								<f:setPropertyActionListener value="#{projet}"
+									target="#{projetB.projet}" />
+								<f:setPropertyActionListener value="true"
+									target="#{projetB.showDev}" />
+							</h:commandButton>
+						</h:column>
+					</h:dataTable>
+				</div>
+			</div>
+		</h:form>
+		<h:form rendered="#{projetB.showDev}">
+			<div class="panel panel-warning">
+				<div class="panel-heading">La liste des developpeurs</div>
+				<div class="panel-body">
+				<h:dataTable
+						styleClass="table table-striped table-bordered table-hover"
+						value="#{projetB.utilisateurs}" var="user">
+
+						<h:column>
+							<f:facet name="header">Nom</f:facet>
+							<h:outputText value="#{user.nom}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Prenom</f:facet>
+							<h:outputText value="#{user.prenom}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Departement</f:facet>
+							<h:outputText value="#{user.departement}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+							<h:outputText value="#{user.email}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Affecter</f:facet>
+							<h:commandButton styleClass="btn btn-warning btn-xs" action="#{projetB.doAffecterDev(user)}"
+								value="Affecter" />
+						</h:column>
+					</h:dataTable>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

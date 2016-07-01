@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="titleName">DASHBOARD</ui:define>
+	<ui:define name="menu">
+		<li><a href="#{request.contextPath}/pages/lancementProjet.xhtml">
+				Lancer un projet </a></li>
+	</ui:define>
+	<ui:define name="PageName">Dashboard Chef de division</ui:define>
+	<ui:define name="PageContent">
+		<ui:include src="/WEB-INF/template/menuCD.xhtml" />
+		<div class="row">
+			<div class="col-md-6">
+				<h:form>
+					<div class="panel panel-info">
+						<div class="panel-heading">Les documents d'etude des besoins</div>
+						<div class="panel-body"></div>
+					</div>
+				</h:form>
+			</div>
+			<div class="col-md-6">
+
+				<h:form>
+					<div class="panel panel-warning">
+						<div class="panel-heading">Les cahiers des charges</div>
+						<div class="panel-body"></div>
+					</div>
+				</h:form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h:form>
+					<div class="panel panel-danger">
+						<div class="panel-heading">Les documents d'analyse des
+							besoins</div>
+						<div class="panel-body"></div>
+					</div>
+				</h:form>
+			</div>
+			<div class="col-md-6">
+
+				<h:form>
+					<div class="panel panel-success">
+						<div class="panel-heading">Ajouter un nouveau document
+							d'analyse des besoins</div>
+						<div class="panel-body">
+							<label> Nom Document : </label>
+							<h:inputText value="#{documentB.nomDocument}"
+								class="form-control" />
+							<label> Charger le document :</label>
+							<br/>
+							<p:fileUpload value="#{documentB.file}" mode="simple"
+								skinSimple="true" />
+							<hr />
+							<h:commandButton action=" "
+								value="Ajouter" class="btn btn-success" />
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
